@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,body,#root{
+    min-height: 100%;
+    width: 100%;
+    background-color:hsl(223, 19%, 93%) ; 
+    position: relative;
+}
+
+.position-reply{
+    bottom: -32px;
+}
+
+@layer components{
+    .mobile-score{
+        @apply h-full w-[100px] p-2 flex-row
+    }
+    .mobile-form{
+        @apply flex flex-col h-[160px]
+    }
+    .mobile-container{
+        @apply flex justify-between w-full px-3
+    }
+}
