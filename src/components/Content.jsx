@@ -71,6 +71,7 @@ const Content = ({content, isReplying,setIsReplying}) => {
     setIsUpdating(false)
     }
 
+    const parts = content.content.split(/(@\S+)/); //  regular expression to split on '@' followed
 
    
 
@@ -118,7 +119,16 @@ const Content = ({content, isReplying,setIsReplying}) => {
           px-3 py-2 text-start flex flex-wrap resize-none' onChange={(e)=>{setTextArea(e.target.value)}}
            type="text" cols="30" rows="4" defaultValue={content.content}></textarea>)
             :(
-            <p className='text-grayBlue'>{content.content}</p>
+            <p className='text-grayBlue'> 
+            {parts.map((part, index) => (
+                <span key={index}>
+                  {part.startsWith('@') ? (
+                    <span className='text-moderateBlue font-semibold'>{part}</span>
+                  ) : (
+                    part
+                  )}
+                </span>
+              ))}</p>
             )}
         </div>
         {isUpdating &&(

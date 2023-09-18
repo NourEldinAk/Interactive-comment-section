@@ -78,7 +78,7 @@ const AddComment = ({buttonTitle, isReplying, commentData,setIsWriting , replyin
              value={comment}
              onChange={(e)=>{setComment(e.target.value)}}
              >
-
+              
           </textarea>
           <button onClick={handleComment} className='bg-moderateBlue text-white px-6 py-[10px]
            rounded-lg uppercase text-sm font-semibold active:opacity-40'>
